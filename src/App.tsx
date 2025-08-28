@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Confirmation from "./pages/Confirmation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,8 +26,8 @@ const App = () => (
             <Route path="/shop" element={<Shop />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl">Checkout (Connect Stripe for payments)</h1></div>} />
-            <Route path="/confirmation" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl">Order Confirmed!</h1></div>} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/about" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl">About Us</h1></div>} />
             <Route path="/contact" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl">Contact Us</h1></div>} />
             <Route path="/account" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl">My Account</h1></div>} />
