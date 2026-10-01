@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+"use client";
+
+import Link from 'next/link';
 import { Facebook, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -55,22 +57,22 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/shop" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Link href="/shop" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Shop All
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Link href="/about" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Link href="/contact" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link to="/account" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Link href="/account" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   My Account
                 </Link>
               </li>

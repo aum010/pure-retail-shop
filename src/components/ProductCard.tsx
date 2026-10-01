@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+"use client";
+
+import Link from 'next/link';
 import { Heart, ShoppingBag, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +8,7 @@ import { Product } from '@/lib/store';
 import { useStore } from '@/lib/store';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import { formatNPR } from '@/lib/currency';
 
 interface ProductCardProps {
   product: Product;
@@ -46,7 +49,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Link to={`/product/${product.id}`} className="group">
+    <Link href={`/product/${product.id}`} className="group">
       <div className="card-hover bg-card rounded-lg overflow-hidden">
         <div className="relative aspect-[3/4] bg-muted">
           <img
@@ -114,10 +117,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
           
           {/* Price */}
           <div className="flex items-center gap-2">
-            <span className="font-semibold">${product.price}</span>
+            <span className="font-semibold">{formatNPR(product.price)}</span>
             {product.originalPrice && (
               <span className="text-sm text-muted-foreground line-through">
-                ${product.originalPrice}
+                {formatNPR(product.originalPrice)}
               </span>
             )}
           </div>

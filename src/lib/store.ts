@@ -30,6 +30,15 @@ export interface User {
   avatar?: string;
 }
 
+export interface LastOrder {
+  orderId: string;
+  amount: number;
+  provider: 'esewa' | 'khalti';
+  transactionId: string;
+  transactionCode: string;
+  placedAt: string;
+}
+
 interface StoreState {
   // Cart
   cart: CartItem[];
@@ -49,6 +58,10 @@ interface StoreState {
   // User
   user: User | null;
   setUser: (user: User | null) => void;
+
+  // Orders
+  lastOrder: LastOrder | null;
+  setLastOrder: (order: LastOrder | null) => void;
   
   // Newsletter
   newsletterEmail: string;
@@ -132,6 +145,10 @@ export const useStore = create<StoreState>()(
       // User
       user: null,
       setUser: (user) => set({ user }),
+
+      // Orders
+      lastOrder: null,
+      setLastOrder: (order) => set({ lastOrder: order }),
       
       // Newsletter
       newsletterEmail: '',

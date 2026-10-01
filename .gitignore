@@ -22,3 +22,42 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local env files (contain payment secrets)
+.env
+.env.local
+!.env.example
+
+# SQLite order ledger (DATABASE_URL; created on first boot)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Ledger snapshots produced by tools/migration (local only; never commit a
+# dump of the orders table — it carries customer names and email addresses)
+migration-out/
+
+# Next.js build output and incremental typecheck cache
+.next/
+out/
+*.tsbuildinfo
+
+# Local PostgreSQL cluster: data directory and server logs (never commit a
+# live cluster — it contains the orders table with customer PII)
+.pgdata/
+.pglogs/
+
+# Error sidecars written by local dev/install runs (the matching *.log files
+# are already ignored above)
+*.err
+
+# Vercel CLI output
+.vercel/
+
+# Test / coverage output
+coverage/
+
+# Windows Explorer metadata that folders accrue locally
+desktop.ini
+Thumbs.db
